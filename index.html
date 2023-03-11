@@ -10,40 +10,222 @@
       href="https://fonts.googleapis.com/css2?family=Dynalight&family=Poppins:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/x-icon" href="/icons/styled hamburger.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>resturant app</title>
   </head>
   <body>
-    <nav>
-      <img src="./icons/styled hamburger.svg" alt="" class="icon" />
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Favourites</a></li>
-        <li><a href="#">Best Deals</a></li>
-        <li><a href="#">Menu</a></li>
-        <!-- <li><a href="#">Contact Us</a></li> -->
-      </ul>
-      <div class="opitions">
-        <input type="search" placeholder="Search Food, Categories" />
-        <img src="./icons/icons8-slider 1.svg" alt="" class="filter" />
+    <nav id="nav">
+      <div class="container">
+        <img src="./icons/styled hamburger.svg" alt="" class="icon" />
+        <ul>
+          <li><a class="nav-link" href="#">Home</a></li>
+          <li><a class="nav-link" href="#favourites">Favourites</a></li>
+          <li><a class="nav-link" href="#">Best Deals</a></li>
+          <li><a class="nav-link" href="#">Menu</a></li>
+          <!-- <li><a href="#">Contact Us</a></li> -->
+          <li><a class="nav-link" class="hero" href="#">Order Now</a></li>
+        </ul>
+        <!-- <div class="opitions">
+          <input type="search" placeholder="Search Food, Categories" />
+          <img src="./icons/icons8-slider 1.svg" alt="" class="filter" />
+        </div> -->
       </div>
     </nav>
     <header>
       <div class="slider">
         <!-- <img class="hero-img" src="./images/Reservation-bg.webp" alt="" /> -->
         <div class="heading">
-          <span class="intro-text fancy-font">welcome</span>
-          <span>You should come and taste for yourself </span>
-          <button>Menu</button>
+          <!-- <span class="intro-text fancy-font">welcome</span>
+          <span
+            >You should come and <span class="fancy-font span">taste</span> for
+            yourself
+          </span>
+          <button>Menu</button> -->
+          <img src="./images/slide_logo.png" alt="" />
         </div>
       </div>
     </header>
-    <section class="user-fav">
-      <div>
+    <!-- <section class="user-fav">
+      <div class="section-title">
         <p>Your Favourite</p>
         <a href="#">see all</a>
       </div>
-      <div class="fav-meals">
+      <div id="favourites" class="fav-meals">
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
+        <div class="meal-card">
+          <img src="./images/Name=Bacon pizza.svg" alt="" />
+          <span class="meal-title">supreme pizza</span>
+          <div class="f-2">
+            <span class="price">16$</span>
+            <img
+              src="./icons/icons8-plus_math 5.svg"
+              alt=""
+              class="plus-sign"
+            />
+          </div>
+        </div>
         <div class="meal-card">
           <img src="./images/Name=Bacon pizza.svg" alt="" />
           <span class="meal-title">supreme pizza</span>
@@ -93,16 +275,57 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="popular">
-      <div>
-        <p>Popular</p>
-        <a href="#">see all</a>
+    </section> -->
+    <section class="about-us">
+      <div class="container">
+        <div class="info">
+          <div class="intro">
+            <p><span class="fancy-font">Welcome to</span>danny's resturant</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsum
+            nesciunt eligendi corporis delectus, ullam nostrum possimus
+            doloremque illo officia adipisci, architecto quasi iste numquam
+            tempore molestias, voluptatem dignissimos atque? Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Adipisci ipsum voluptas vel
+            in voluptates, dolor fugit saepe dolores itaque obcaecati assumenda
+            veniam quisquam rerum possimus iure pariatur consequuntur qui
+            doloremque!
+          </p>
+          <span class="link">About us</span>
+        </div>
+        <div class="images">
+          <img src="./images/prod_10-360x360.jpg" class="back" alt="" />
+          <img src="./images/prod_13-360x360.jpg" class="front" alt="" />
+        </div>
       </div>
-      <div class="popular-meals"></div>
     </section>
     <section class="menu">
-      <ul></ul>
+      <div class="container">
+        <div class="f-2">
+          <div class="info f-2-v">
+            <p><span class="fancy-font">resturant</span>menu</p>
+            <div class="f-2">
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                consequuntur nisi delectus perspiciatis accusamus, doloribus
+                corrupti officia. Inventore repellendus cumque corrupti quas
+                eaque temporibus aliquam quod, impedit adipisci. Voluptatibus,
+                quod?
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                quidem dolorem quod distinctio, eligendi animi maiores fuga
+                possimus architecto iusto consequuntur laboriosam laborum nemo
+                nobis! Ea fugiat eius eos excepturi!
+              </div>
+            </div>
+            <span class="link">what's on the menu</span>
+          </div>
+          <div class="img"></div>
+        </div>
+      </div>
     </section>
+    <script src="main.js"></script>
   </body>
 </html>
