@@ -50,6 +50,9 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach((element) => {
     if (element.isIntersecting) {
       element.target.classList.add("active");
+    }else{
+      element.target.classList.remove("active");
+      
     }
   });
 });
