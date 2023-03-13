@@ -51,11 +51,14 @@ const observer = new IntersectionObserver(
     entries.forEach((element) => {
       if (element.isIntersecting) {
         element.target.classList.add("active");
+      }else{
+        element.target.classList.remove("active");
+
       }
     });
   },
   {
-    threshold: 0.3,
+    threshold: 0.2,
   }
 );
 sections.forEach((e) => {
