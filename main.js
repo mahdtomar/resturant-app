@@ -30,7 +30,7 @@ function forward() {
   showComments(order);
 }
 function backward() {
-  order <= 0 ? (order = commentsArray.length - 1) : ++order;
+  order <= 0 ? (order = commentsArray.length - 1) : --order;
   showComments(order);
 }
 function showComments(num) {
@@ -51,9 +51,8 @@ const observer = new IntersectionObserver(
     entries.forEach((element) => {
       if (element.isIntersecting) {
         element.target.classList.add("active");
-      }else{
+      } else {
         element.target.classList.remove("active");
-
       }
     });
   },
