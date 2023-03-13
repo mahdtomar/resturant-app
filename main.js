@@ -3,7 +3,7 @@ const slider = document.querySelector(".slider");
 const comments = document.querySelectorAll(".comment");
 const commentsArray = Array.from(comments);
 let order = Number(slider.getAttribute("num"));
-const menu = document.getElementById("menu");
+const menu = document.getElementById("navigation-menu");
 const ul = document.getElementById("ul");
 const closeIcon = document.querySelector(".close-icon");
 menu.addEventListener("click", () => {
@@ -56,3 +56,23 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach((e) => {
   observer.observe(e);
 });
+
+const links = Array.from(document.querySelectorAll(".nav-link"));
+links.forEach((ele) => {
+  ele.addEventListener("click", (e) => {
+    navigation(e.target.textContent);
+    console.log(e.target);
+  });
+});
+function navigation(id) {
+  const element = document.getElementById(id);
+  console.log(id);
+  console.log(document.getElementById(id).offsetTop);
+  window.scrollTo({
+    top: element.offsetTop - 100,
+    left: 0,
+    behavior: "smooth",
+  });
+  // window.moveTo(0, document.getElementById(id).clientHeight);
+  console.log(window.scrollY);
+}
