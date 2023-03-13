@@ -75,6 +75,9 @@ body {
       align-items: center;
       display: flex;
       max-width: 1440px;
+      svg {
+        display: none;
+      }
       ul {
         list-style-type: none;
         li {
@@ -949,6 +952,42 @@ body {
                 gap: 5px;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  body {
+    nav {
+      padding: 0px;
+      .container {
+        position: relative;
+        padding: 0px 8px;
+        top: 0px;
+        svg {
+          display: block;
+          width: 50px;
+          fill: white;
+        }
+        ul {
+          .close-icon {
+            fill: white;
+            path {
+              fill: white;
+            }
+          }
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: -350px;
+          left: 0px;
+          background-color: rgba($color: #000000, $alpha: 0.6);
+          transition: 0.5s;
+          &.visible {
+            top: 0px;
           }
         }
       }

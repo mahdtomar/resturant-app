@@ -3,7 +3,15 @@ const slider = document.querySelector(".slider");
 const comments = document.querySelectorAll(".comment");
 const commentsArray = Array.from(comments);
 let order = Number(slider.getAttribute("num"));
-
+const menu = document.getElementById("menu");
+const ul = document.getElementById("ul");
+const closeIcon = document.querySelector(".close-icon");
+menu.addEventListener("click", () => {
+  ul.classList.toggle("visible");
+});
+closeIcon.addEventListener("click",()=>{
+  ul.classList.remove("visible")
+})
 function checkingScrolling() {
   if (window.scrollY > 0) {
     nav.style.backgroundColor = "var(--bluesh-black)";
