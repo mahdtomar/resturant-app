@@ -20,10 +20,29 @@ html {
   font-family: "Great Vibes", cursive;
   text-transform: uppercase;
   display: block;
+  font-size: 2em;
 }
 
-.fancy-font.span {
-  font-size: 2.5em;
+.link {
+  padding: 16px 32px;
+  border-left: 5px solid black;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.link:hover {
+  border-color: var(--main);
+  color: var(--main);
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  max-width: 1440px;
 }
 
 .f-2 {
@@ -55,7 +74,8 @@ html {
 }
 
 :root {
-  --black: #16191e;
+  --bluesh-black: #16191e;
+  --black: #0b0d0f;
   --orange: #ffa800;
   --orange: #cf4d2d;
   --orange: #cd9933;
@@ -67,20 +87,20 @@ body {
 }
 
 body nav {
-  background-color: rgba(0, 0, 0, 0.9);
-  background-color: black;
-  z-index: 998;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  z-index: 200;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
 }
 
 body nav .container {
   z-index: 999;
-  position: fixed;
   top: 8px;
-  left: 50%;
-  width: 100%;
+  margin: auto;
   padding: 8px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -103,17 +123,28 @@ body nav .container ul li {
   cursor: pointer;
 }
 
-body nav .container ul li a {
-  padding: 8px 0px;
+body nav .container ul li .nav-link {
+  display: block;
+  padding: 16px 0px;
   color: white;
   font-weight: bold;
   text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-body nav .container ul li a.hero {
-  padding: 8px;
-  background-color: var(--orange);
-  border: 5px solid var(--orange);
+body nav .container ul li .nav-link:hover {
+  color: var(--main);
+}
+
+body nav .container ul li .nav-link.hero {
+  padding: 16px 32px;
+  background-color: var(--main);
+}
+
+body nav .container ul li .nav-link.hero:hover {
+  color: white;
+  background-color: #8d6921;
 }
 
 body nav .container .opitions {
@@ -188,12 +219,6 @@ body header .slider .heading button {
   font-size: 1.5em;
 }
 
-body section .container {
-  width: 100%;
-  margin: auto;
-  max-width: 1440px;
-}
-
 body section.about-us {
   height: 70vh;
   margin: 100px auto;
@@ -252,15 +277,20 @@ body section.about-us .container div.info .link:hover {
 
 body section.about-us .container div.images {
   position: relative;
+  bottom: 50px;
+  right: 25px;
 }
 
 body section.about-us .container div.images img {
   display: block;
   position: absolute;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 body section.about-us .container div.images img.front {
   z-index: 10;
+  left: 50px;
 }
 
 body section.about-us .container div.images img.back {
@@ -309,7 +339,7 @@ body section .fav-meals::-webkit-scrollbar-track {
 
 body section .fav-meals::-webkit-scrollbar-thumb {
   border-radius: 200px;
-  background-color: var(--black);
+  background-color: var(--bluesh-black);
   width: 10px;
 }
 
@@ -338,11 +368,11 @@ body section .fav-meals .meal-card img {
 }
 
 body section.menu {
-  background-color: var(--black);
+  background-color: var(--bluesh-black);
   color: white;
-  height: 700px;
+  height: auto;
   margin-top: 200px;
-  padding: 0px 0px;
+  padding: 20px 0px;
 }
 
 body section.menu .container {
@@ -356,13 +386,16 @@ body section.menu .container .f-2 {
 body section.menu .container .f-2 div {
   width: 50%;
   height: 100%;
+  font-size: 14px;
+  width: 70%;
 }
 
 body section.menu .container .f-2 .info {
-  height: auto;
+  height: 80%;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding: 0px 0px 0px 8px;
 }
 
 body section.menu .container .f-2 .info p {
@@ -403,9 +436,695 @@ body section.menu .container .f-2 .info .link:hover {
 }
 
 body section.menu .container .f-2 .img {
-  width: 50%;
-  height: 100%;
+  max-height: 700px;
+  height: 600px;
   background-image: url("./images/slide_05.jpg");
   background-size: cover;
+}
+
+body section.chinese-food {
+  height: 600px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 100px;
+}
+
+body section.chinese-food .container .f-2 {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  gap: 100px;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+}
+
+body section.chinese-food .container .f-2 .info.f-2-v {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 50%;
+}
+
+body section.chinese-food .container .f-2 .info.f-2-v .intro p {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+body section.chinese-food .container .f-2 .info.f-2-v .f-2 {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  gap: 16px;
+}
+
+body section.chinese-food .container .f-2 .info.f-2-v .f-2 p {
+  text-align: left;
+  max-width: 250px;
+}
+
+body section.chinese-food .container .f-2 .imgs {
+  position: relative;
+  width: 40%;
+  max-width: 50%;
+  height: 200px;
+}
+
+body section.chinese-food .container .f-2 .imgs img {
+  position: absolute;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+body section.chinese-food .container .f-2 .imgs img.front {
+  z-index: 99;
+  right: -100px;
+  bottom: -150px;
+}
+
+body section.chinese-food .container .f-2 .imgs img.back {
+  left: 0px;
+  top: -220px;
+}
+
+body section.comments {
+  margin: 100px auto;
+}
+
+body section.comments .container .intro {
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+body section.comments .container .slider {
+  width: 60%;
+  gap: 100px;
+}
+
+body section.comments .container .slider .arrow {
+  cursor: pointer;
+}
+
+body section.comments .container .slider .comments-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+body section.comments .container .slider .comments-container .comment {
+  height: 300px;
+  width: 100%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  position: absolute;
+}
+
+body section.comments .container .slider .comments-container .comment.visible {
+  opacity: 1;
+}
+
+body section.comments .container .slider .comments-container .comment.hidden {
+  opacity: 0;
+}
+
+body section.comments .container .slider .comments-container .comment p {
+  margin: 32px auto;
+  position: relative;
+  text-align: center;
+}
+
+body section.comments .container .slider .comments-container .comment span.separator {
+  font-size: 3em;
+}
+
+body section.comments .container .slider .comments-container .comment .name {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+body section.reservation {
+  height: 100vh;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("./images/img_06.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./images/img_06.jpg");
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+body section.reservation .header {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 32px;
+}
+
+body section.reservation .info {
+  letter-spacing: 2px;
+  margin: 8px auto;
+}
+
+body section.reservation .link {
+  border-left: 5px solid white;
+}
+
+body section.reservation .link:hover {
+  border-color: var(--main);
+}
+
+body footer {
+  background-color: var(--black);
+  padding: 100px 0px 20px;
+}
+
+body footer .container {
+  color: white;
+}
+
+body footer .container div {
+  width: 30%;
+}
+
+body footer .container div:nth-child(1) {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 20px;
+}
+
+body footer .container div:nth-child(1) p {
+  width: 170px;
+  color: lightslategray;
+}
+
+body footer .container div:nth-child(1) ul {
+  list-style: none;
+}
+
+body footer .container div:nth-child(1) ul li {
+  margin: 16px 0px;
+}
+
+body footer .container div:nth-child(1) ul li:nth-child(1) {
+  margin-top: 0px;
+}
+
+body footer .container div:nth-child(1) ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+body footer .container div:nth-child(2) {
+  gap: 20px;
+}
+
+body footer .container div:nth-child(2) button {
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 16px 32px;
+  background-color: transparent;
+  border: 5px solid var(--main);
+  color: var(--main);
+  font-size: 20px;
+}
+
+body footer .container div:nth-child(2) span {
+  color: lightslategray;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+body footer .container div:nth-child(2) .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body footer .container div:nth-child(2) .socials svg:nth-child(2) path, body footer .container div:nth-child(2) .socials svg:nth-child(4) path {
+  stroke: lightslategray;
+  fill: lightslategray;
+}
+
+body footer .container div:nth-child(2) .socials svg:nth-child(3) path {
+  fill: none;
+  stroke: lightslategray;
+}
+
+body footer .container div:nth-child(2) .socials svg:nth-child(1) path {
+  stroke: lightslategray;
+}
+
+body footer .container div:nth-child(3) {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 10px;
+  color: lightslategray;
+  font-weight: bold;
+}
+
+body footer .container div:nth-child(3) span.phone {
+  color: var(--main);
+}
+
+body footer .container div:nth-child(3) span.f-2-v {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 5px;
+}
+
+@media (max-width: 1200px) {
+  .fancy-font {
+    font-size: 1em;
+  }
+  * {
+    font-size: 14px;
+  }
+  body header .slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  body header .slider .heading {
+    color: white;
+  }
+  body header .slider .heading img {
+    width: 350px;
+  }
+  body section.about-us {
+    height: 70vh;
+    margin: 100px auto;
+    padding: 0px 8px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body section.about-us .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body section.about-us .container div {
+    width: 50%;
+  }
+  body section.about-us .container div.info .intro p {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  body section.about-us .container div.info .intro span {
+    font-weight: bold;
+  }
+  body section.about-us .container div.info p {
+    margin: 32px 0px;
+  }
+  body section.about-us .container div.info .link {
+    padding: 16px 32px;
+    border-left: 5px solid black;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  body section.about-us .container div.info .link:hover {
+    border-color: var(--main);
+    color: var(--main);
+  }
+  body section.about-us .container div.images {
+    right: 25px;
+  }
+  body section.about-us .container div.images img {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  body section.about-us .container div.images img.back {
+    left: 180px;
+  }
+  body section.chinese-food {
+    height: 600px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 100px;
+  }
+  body section.chinese-food .container .f-2 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 100px;
+    -webkit-box-pack: normal;
+        -ms-flex-pack: normal;
+            justify-content: normal;
+  }
+  body section.chinese-food .container .f-2 .info.f-2-v {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 50%;
+  }
+  body section.chinese-food .container .f-2 .info.f-2-v .intro p {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2em;
+  }
+  body section.chinese-food .container .f-2 .info.f-2-v .f-2 {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    gap: 16px;
+  }
+  body section.chinese-food .container .f-2 .info.f-2-v .f-2 p {
+    text-align: left;
+    max-width: 250px;
+  }
+  body section.chinese-food .container .f-2 .imgs {
+    position: relative;
+    width: 40%;
+    max-width: 50%;
+    height: 200px;
+  }
+  body section.chinese-food .container .f-2 .imgs img {
+    position: absolute;
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  body section.chinese-food .container .f-2 .imgs img.front {
+    z-index: 99;
+    right: -80px;
+    bottom: -150px;
+  }
+  body section.chinese-food .container .f-2 .imgs img.back {
+    left: 40px;
+    top: -220px;
+  }
+  body footer .container div:nth-child(2) {
+    gap: 20px;
+  }
+  body footer .container div:nth-child(2) button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 930px) {
+  .f-2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body nav .container ul {
+    list-style-type: none;
+  }
+  body nav .container ul li {
+    margin-inline: 8px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  body nav .container ul li .nav-link {
+    display: block;
+    padding: 16px 0px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  body nav .container ul li .nav-link:hover {
+    color: var(--main);
+  }
+  body nav .container ul li .nav-link.hero {
+    padding: 16px 32px;
+    background-color: var(--main);
+  }
+  body nav .container ul li .nav-link.hero:hover {
+    color: white;
+    background-color: #8d6921;
+  }
+  body nav .container .opitions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0px 16px 0px 0px;
+    border: none;
+    border-radius: 1000px;
+    -webkit-box-shadow: 0px 0px 5px 0px grey;
+            box-shadow: 0px 0px 5px 0px grey;
+    background-color: #eaeaea;
+  }
+  body nav .container .opitions input {
+    font-size: 1em;
+    width: 220px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10000px;
+  }
+  body nav .container .opitions input:focus {
+    outline: none;
+  }
+  body header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./images/dining-bg.webp");
+    background-size: cover;
+    z-index: -1;
+  }
+  body header .slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  body header .slider .heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: white;
+  }
+  body header .slider .heading .intro-text {
+    font-size: 3.5em;
+    display: block;
+    margin: 0px 0px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  body header .slider .heading button {
+    display: block;
+    margin: 24px auto;
+    background-color: transparent;
+    border: 5px solid white;
+    padding: 8px 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  body section.about-us {
+    height: 70vh;
+    margin: 100px auto;
+    padding: 0px 8px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body section.about-us .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body section.about-us .container div {
+    width: 80%;
+  }
+  body section.about-us .container div.images {
+    display: none;
+  }
+  body section.menu {
+    padding: 0px 0px;
+  }
+  body section.menu .container {
+    height: 100%;
+  }
+  body section.menu .container .f-2 {
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  body section.menu .container .f-2 div {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    width: auto;
+  }
+  body section.menu .container .f-2 .info {
+    margin: 20px 0px;
+    height: 80%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 0px 0px 0px 8px;
+  }
+  body section.menu .container .f-2 .info .f-2 {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    margin: 20px 0px;
+  }
+  body section.menu .container .f-2 .info .f-2 div {
+    width: auto;
+  }
+  body section.menu .container .f-2 .info .f-2 div:nth-child(2) {
+    margin: 0px;
+  }
+  body section.menu .container .f-2 .img {
+    width: 100%;
+  }
+  body section.chinese-food {
+    height: 350px;
+  }
+  body section.chinese-food .container {
+    margin-top: 20px;
+  }
+  body section.chinese-food .container .f-2 .info.f-2-v {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 100%;
+    padding: 0px 8px;
+  }
+  body section.chinese-food .container .f-2 .info.f-2-v .f-2 p {
+    width: 100%;
+    max-width: none;
+  }
+  body section.chinese-food .container .f-2 .imgs {
+    display: none;
+  }
+  body section.comments .container {
+    margin-top: 20px;
+  }
+  body section.comments .container .slider {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 10px;
+  }
+  body footer .container div {
+    width: 90%;
+  }
+  body footer .container div:nth-child(1) {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body footer .container div:nth-child(1) p {
+    width: auto;
+  }
+  body footer .container div:nth-child(1) ul {
+    list-style: none;
+  }
+  body footer .container div:nth-child(1) ul li {
+    margin: 16px 0px;
+  }
+  body footer .container div:nth-child(1) ul li:nth-child(1) {
+    margin-top: 0px;
+  }
+  body footer .container div:nth-child(1) ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  body footer .container div:nth-child(2) {
+    gap: 20px;
+  }
+  body footer .container div:nth-child(2) button {
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 16px 32px;
+    background-color: transparent;
+    border: 5px solid var(--main);
+    color: var(--main);
+    font-size: 20px;
+  }
+  body footer .container div:nth-child(2) span {
+    color: lightslategray;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  body footer .container div:nth-child(2) .socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+  }
+  body footer .container div:nth-child(2) .socials svg:nth-child(2) path, body footer .container div:nth-child(2) .socials svg:nth-child(4) path {
+    stroke: lightslategray;
+    fill: lightslategray;
+  }
+  body footer .container div:nth-child(2) .socials svg:nth-child(3) path {
+    fill: none;
+    stroke: lightslategray;
+  }
+  body footer .container div:nth-child(2) .socials svg:nth-child(1) path {
+    stroke: lightslategray;
+  }
+  body footer .container div:nth-child(3) {
+    margin-top: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 10px;
+  }
+  body footer .container div:nth-child(3) span.phone {
+    color: var(--main);
+  }
+  body footer .container div:nth-child(3) span.f-2-v {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 5px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

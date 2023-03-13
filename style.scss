@@ -17,9 +17,25 @@ html {
   font-family: "Great Vibes", cursive;
   text-transform: uppercase;
   display: block;
-  &.span {
-    font-size: 2.5em;
+  font-size: 2em;
+}
+.link {
+  padding: 16px 32px;
+  border-left: 5px solid black;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-weight: bold;
+  &:hover {
+    border-color: var(--main);
+    color: var(--main);
   }
+}
+.container {
+  width: 100%;
+  margin: auto;
+  max-width: 1440px;
 }
 .f-2 {
   display: flex;
@@ -33,7 +49,8 @@ html {
   flex-direction: column;
 }
 :root {
-  --black: #16191e;
+  --bluesh-black: #16191e;
+  --black: #0b0d0f;
   --orange: #ffa800;
   --orange: #cf4d2d;
   --orange: #cd9933;
@@ -42,17 +59,18 @@ html {
 body {
   position: relative;
   nav {
-    background-color: rgba($color: #000000, $alpha: 0.9);
-    background-color: black;
-    z-index: 998;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 200;
+    transition: background 0.3s;
     .container {
       z-index: 999;
-      position: fixed;
       top: 8px;
-      left: 50%;
-      width: 100%;
+      // left: 50%;
+      margin: auto;
       padding: 8px;
-      transform: translateX(-50%);
+      width: 100%;
       justify-content: space-between;
       align-items: center;
       display: flex;
@@ -63,15 +81,23 @@ body {
           margin-inline: 8px;
           display: inline-block;
           cursor: pointer;
-          a {
-            padding: 8px 0px;
+          .nav-link {
+            display: block;
+            padding: 16px 0px;
             color: white;
             font-weight: bold;
             text-decoration: none;
+            transition: 0.3s;
+            &:hover {
+              color: var(--main);
+            }
             &.hero {
-              padding: 8px;
-              background-color: var(--orange);
-              border: 5px solid var(--orange);
+              padding: 16px 32px;
+              background-color: var(--main);
+              &:hover {
+                color: white;
+                background-color: #8d6921;
+              }
             }
           }
         }
@@ -135,12 +161,6 @@ body {
     }
   }
   section {
-    .container {
-      width: 100%;
-      // background-color: #eee;
-      margin: auto;
-      max-width: 1440px;
-    }
     &.about-us {
       height: 70vh;
       margin: 100px auto;
@@ -182,11 +202,15 @@ body {
           }
           &.images {
             position: relative;
+            bottom: 50px;
+            right: 25px;
             img {
               display: block;
               position: absolute;
+              transform: scale(0.8);
               &.front {
                 z-index: 10;
+                left: 50px;
               }
               &.back {
                 z-index: 9;
@@ -224,7 +248,7 @@ body {
 
       &::-webkit-scrollbar-thumb {
         border-radius: 200px;
-        background-color: var(--black);
+        background-color: var(--bluesh-black);
         width: 10px;
       }
       .meal-card {
@@ -248,11 +272,11 @@ body {
       }
     }
     &.menu {
-      background-color: var(--black);
+      background-color: var(--bluesh-black);
       color: white;
-      height: 700px;
+      height: auto;
       margin-top: 200px;
-      padding: 0px 0px;
+      padding: 20px 0px;
       .container {
         height: 100%;
         .f-2 {
@@ -260,10 +284,13 @@ body {
           div {
             width: 50%;
             height: 100%;
+            font-size: 14px;
+            width: 70%;
           }
           .info {
-            height: auto;
+            height: 80%;
             align-items: flex-start;
+            padding: 0px 0px 0px 8px;
             p {
               font-size: 2em;
               text-transform: uppercase;
@@ -294,10 +321,634 @@ body {
             }
           }
           .img {
-            width: 50%;
-            height: 100%;
+            // width: 50%;
+            max-height: 700px;
+            height: 600px;
             background-image: url("./images/slide_05.jpg");
             background-size: cover;
+          }
+        }
+      }
+    }
+    &.chinese-food {
+      height: 600px;
+      display: grid;
+      align-items: center;
+      margin-top: 100px;
+      .container {
+        .f-2 {
+          flex-direction: row-reverse;
+          gap: 100px;
+          justify-content: normal;
+          .info.f-2-v {
+            align-items: flex-start;
+            width: 50%;
+            .intro {
+              p {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 2em;
+              }
+            }
+            .f-2 {
+              justify-content: left;
+              gap: 16px;
+              p {
+                text-align: left;
+                max-width: 250px;
+              }
+            }
+          }
+          .imgs {
+            position: relative;
+            width: 40%;
+            max-width: 50%;
+            height: 200px;
+            img {
+              position: absolute;
+              transform: scale(0.7);
+              &.front {
+                z-index: 99;
+                right: -100px;
+                bottom: -150px;
+              }
+              &.back {
+                left: 0px;
+                top: -220px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.comments {
+      margin: 100px auto;
+      .container {
+        .intro {
+          text-transform: uppercase;
+          font-size: 2em;
+          font-weight: bold;
+        }
+        .slider {
+          width: 60%;
+          gap: 100px;
+          .arrow {
+            cursor: pointer;
+          }
+          .comments-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            .comment {
+              height: 300px;
+              width: 100%;
+              transition: 0.4s;
+              position: absolute;
+              &.visible {
+                // display: flex;
+                opacity: 1;
+              }
+              &.hidden {
+                // display: none;
+                opacity: 0;
+              }
+              p {
+                margin: 32px auto;
+                position: relative;
+                text-align: center;
+              }
+              span.separator {
+                font-size: 3em;
+              }
+              .name {
+                text-transform: uppercase;
+                letter-spacing: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.reservation {
+      height: 100vh;
+      width: 100%;
+      background-image: linear-gradient(
+          rgba($color: #000000, $alpha: 0.6),
+          rgba($color: #000000, $alpha: 0.6)
+        ),
+        url("./images/img_06.jpg");
+      background-size: cover;
+      display: grid;
+      align-items: center;
+      color: white;
+      .header {
+        font-size: 2em;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 32px;
+      }
+      .info {
+        letter-spacing: 2px;
+        margin: 8px auto;
+      }
+      .link {
+        border-left: 5px solid white;
+        &:hover {
+          border-color: var(--main);
+        }
+      }
+    }
+  }
+  footer {
+    background-color: var(--black);
+    padding: 100px 0px 20px;
+    .container {
+      color: white;
+      div {
+        width: 30%;
+        &:nth-child(1) {
+          align-items: flex-start;
+          gap: 20px;
+          p {
+            width: 170px;
+            color: lightslategray;
+          }
+          ul {
+            list-style: none;
+            li {
+              margin: 16px 0px;
+              &:nth-child(1) {
+                margin-top: 0px;
+              }
+              a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                letter-spacing: 2px;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          gap: 20px;
+          button {
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: 16px 32px;
+            background-color: transparent;
+            border: 5px solid var(--main);
+            color: var(--main);
+            font-size: 20px;
+          }
+          span {
+            color: lightslategray;
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 2px;
+          }
+          .socials {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            svg {
+              &:nth-child(2),
+              &:nth-child(4) {
+                path {
+                  stroke: lightslategray;
+                  fill: lightslategray;
+                }
+              }
+              &:nth-child(3) {
+                path {
+                  fill: none;
+                  stroke: lightslategray;
+                }
+              }
+              &:nth-child(1) {
+                path {
+                  stroke: lightslategray;
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(3) {
+          align-items: flex-start;
+          gap: 10px;
+          color: lightslategray;
+          font-weight: bold;
+          span {
+            &.phone {
+              color: var(--main);
+            }
+            &.f-2-v {
+              align-items: flex-start;
+              gap: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .fancy-font {
+    font-size: 1em;
+  }
+  * {
+    font-size: 14px;
+  }
+  body {
+    header {
+      .slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .heading {
+          color: white;
+          img {
+            width: 350px;
+          }
+        }
+      }
+    }
+    section {
+      &.about-us {
+        height: 70vh;
+        margin: 100px auto;
+        padding: 0px 8px;
+        display: grid;
+        align-items: center;
+        .container {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          div {
+            width: 50%;
+            &.info {
+              .intro {
+                p {
+                  font-size: 2em;
+                  font-weight: bold;
+                }
+                span {
+                  // font-size: 2.5em;
+                  font-weight: bold;
+                }
+              }
+              p {
+                margin: 32px 0px;
+              }
+              .link {
+                padding: 16px 32px;
+                border-left: 5px solid black;
+                cursor: pointer;
+                transition: 0.3s;
+                text-transform: uppercase;
+                font-weight: bold;
+                &:hover {
+                  border-color: var(--main);
+                  color: var(--main);
+                }
+              }
+            }
+            &.images {
+              right: 25px;
+              img {
+                transform: scale(0.6);
+                &.back {
+                  left: 180px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.chinese-food {
+        height: 600px;
+        display: grid;
+        align-items: center;
+        margin-top: 100px;
+        .container {
+          .f-2 {
+            flex-direction: row-reverse;
+            gap: 100px;
+            justify-content: normal;
+            .info.f-2-v {
+              align-items: flex-start;
+              width: 50%;
+              .intro {
+                p {
+                  text-transform: uppercase;
+                  font-weight: bold;
+                  font-size: 2em;
+                }
+              }
+              .f-2 {
+                justify-content: left;
+                gap: 16px;
+                p {
+                  text-align: left;
+                  max-width: 250px;
+                }
+              }
+            }
+            .imgs {
+              position: relative;
+              width: 40%;
+              max-width: 50%;
+              height: 200px;
+              img {
+                position: absolute;
+                transform: scale(0.6);
+                &.front {
+                  z-index: 99;
+                  right: -80px;
+                  bottom: -150px;
+                }
+                &.back {
+                  left: 40px;
+                  top: -220px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    footer {
+      .container {
+        div {
+          &:nth-child(2) {
+            gap: 20px;
+            button {
+              padding: 8px 16px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 930px) {
+  .f-2 {
+    flex-direction: column;
+  }
+  body {
+    nav {
+      .container {
+        ul {
+          list-style-type: none;
+          li {
+            margin-inline: 8px;
+            display: inline-block;
+            cursor: pointer;
+            .nav-link {
+              display: block;
+              padding: 16px 0px;
+              color: white;
+              font-weight: bold;
+              text-decoration: none;
+              transition: 0.3s;
+              &:hover {
+                color: var(--main);
+              }
+              &.hero {
+                padding: 16px 32px;
+                background-color: var(--main);
+                &:hover {
+                  color: white;
+                  background-color: #8d6921;
+                }
+              }
+            }
+          }
+        }
+        .opitions {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0px 16px 0px 0px;
+          border: none;
+          border-radius: 1000px;
+          box-shadow: 0px 0px 5px 0px grey;
+          background-color: rgb(234, 234, 234);
+          input {
+            font-size: 1em;
+            width: 220px;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 10000px;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+    header {
+      width: 100%;
+      height: 100vh;
+      background-image: url("./images/dining-bg.webp");
+      background-size: cover;
+      z-index: -1;
+      .slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .heading {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          .intro-text {
+            font-size: 3.5em;
+            display: block;
+            margin: 0px 0px;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          button {
+            display: block;
+            margin: 24px auto;
+            background-color: transparent;
+            border: 5px solid white;
+            padding: 8px 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+    section {
+      &.about-us {
+        height: 70vh;
+        margin: 100px auto;
+        padding: 0px 8px;
+        display: grid;
+        align-items: center;
+        .container {
+          justify-content: center;
+          div {
+            width: 80%;
+
+            &.images {
+              display: none;
+            }
+          }
+        }
+      }
+      &.menu {
+        padding: 0px 0px;
+        .container {
+          height: 100%;
+          .f-2 {
+            height: 100%;
+            flex-direction: column-reverse;
+            div {
+              width: 100%;
+              height: 100%;
+              font-size: 14px;
+              width: auto;
+            }
+            .info {
+              margin: 20px 0px;
+              height: 80%;
+              align-items: flex-start;
+              padding: 0px 0px 0px 8px;
+              .f-2 {
+                justify-content: left;
+                margin: 20px 0px;
+                div {
+                  width: auto;
+                }
+                div:nth-child(2) {
+                  margin: 0px;
+                }
+              }
+            }
+            .img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      &.chinese-food {
+        height: 350px;
+        .container {
+          margin-top: 20px;
+          .f-2 {
+            .info.f-2-v {
+              align-items: flex-start;
+              width: 100%;
+              padding: 0px 8px;
+              .f-2 {
+                p {
+                  width: 100%;
+                  max-width: none;
+                }
+              }
+            }
+            .imgs {
+              display: none;
+            }
+          }
+        }
+      }
+      &.comments {
+        .container {
+          margin-top: 20px;
+          .slider {
+            width: 100%;
+            flex-direction: row;
+            gap: 10px;
+          }
+        }
+      }
+    }
+    footer {
+      .container {
+        div {
+          width: 90%;
+          &:nth-child(1) {
+            align-items: center;
+            p {
+              width: auto;
+            }
+            ul {
+              list-style: none;
+              li {
+                margin: 16px 0px;
+                &:nth-child(1) {
+                  margin-top: 0px;
+                }
+                a {
+                  text-decoration: none;
+                  color: white;
+                  font-weight: bold;
+                  letter-spacing: 2px;
+                }
+              }
+            }
+          }
+          &:nth-child(2) {
+            gap: 20px;
+            button {
+              font-weight: bold;
+              letter-spacing: 2px;
+              padding: 16px 32px;
+              background-color: transparent;
+              border: 5px solid var(--main);
+              color: var(--main);
+              font-size: 20px;
+            }
+            span {
+              color: lightslategray;
+              font-weight: bold;
+              font-size: 20px;
+              letter-spacing: 2px;
+            }
+            .socials {
+              display: flex;
+              gap: 10px;
+              svg {
+                &:nth-child(2),
+                &:nth-child(4) {
+                  path {
+                    stroke: lightslategray;
+                    fill: lightslategray;
+                  }
+                }
+                &:nth-child(3) {
+                  path {
+                    fill: none;
+                    stroke: lightslategray;
+                  }
+                }
+                &:nth-child(1) {
+                  path {
+                    stroke: lightslategray;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-child(3) {
+            margin-top: 20px;
+            align-items: center;
+            gap: 10px;
+            span {
+              &.phone {
+                color: var(--main);
+              }
+              &.f-2-v {
+                align-items: center;
+                gap: 5px;
+              }
+            }
           }
         }
       }
