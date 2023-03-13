@@ -9,9 +9,9 @@ const closeIcon = document.querySelector(".close-icon");
 menu.addEventListener("click", () => {
   ul.classList.toggle("visible");
 });
-closeIcon.addEventListener("click",()=>{
-  ul.classList.remove("visible")
-})
+closeIcon.addEventListener("click", () => {
+  ul.classList.remove("visible");
+});
 function checkingScrolling() {
   if (window.scrollY > 0) {
     nav.style.backgroundColor = "var(--bluesh-black)";
@@ -43,3 +43,23 @@ function showComments(num) {
   commentsArray[num].classList.add("visible");
 }
 showComments(order);
+let sections = Array.from(document.querySelectorAll(".moving"));
+sections.forEach((section) => {
+  const appearingPoint =
+    window.scrollY + window.innerHeight - section.clientHeight / 2;
+  console.log(appearingPoint);
+});
+
+window.onscroll = () => {
+  sections.forEach((section) => {
+    const slideInAt =
+      window.scrollY + window.innerHeight - section.clientHeight / 2;
+    const sectionBottom = section.offsetTop + section.clientHeight;
+    const isHalfShown = slideInAt > section.offsetTop;
+    const isNoScrolledPast = window.scrollY < sectionBottom;
+    if (isHalfShown && isNoScrolledPast) {
+      section.classList.add("active");
+    } 
+  });
+};
+window.onscroll(console.log(window.screenY));
