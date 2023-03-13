@@ -512,7 +512,8 @@ body {
             color: var(--main);
             font-size: 20px;
             cursor: pointer;
-            &.hover {
+            transition: 0.3s;
+            &:hover {
               color: #8d6921;
               border-color: #8d6921;
             }

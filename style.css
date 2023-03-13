@@ -677,9 +677,11 @@ body footer .container div:nth-child(2) button {
   color: var(--main);
   font-size: 20px;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-body footer .container div:nth-child(2) button.hover {
+body footer .container div:nth-child(2) button:hover {
   color: #8d6921;
   border-color: #8d6921;
 }
