@@ -21,7 +21,8 @@ function checkingScrolling() {
 }
 
 window.onload = checkingScrolling;
-window.onscroll = checkingScrolling;
+window.addEventListener("scroll", checkingScrolling);
+window.addEventListener("scroll", checkingScrolling);
 
 // changing comments
 function forward() {
@@ -44,11 +45,6 @@ function showComments(num) {
 }
 showComments(order);
 let sections = Array.from(document.querySelectorAll(".moving"));
-sections.forEach((section) => {
-  const appearingPoint =
-    window.scrollY + window.innerHeight - section.clientHeight / 2;
-  console.log(appearingPoint);
-});
 
 window.onscroll = () => {
   sections.forEach((section) => {
@@ -59,7 +55,7 @@ window.onscroll = () => {
     const isNoScrolledPast = window.scrollY < sectionBottom;
     if (isHalfShown && isNoScrolledPast) {
       section.classList.add("active");
-    } 
+    }
   });
 };
 window.onscroll(console.log(window.screenY));
