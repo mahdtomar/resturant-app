@@ -46,13 +46,18 @@ function showComments(num) {
 showComments(order);
 let sections = Array.from(document.querySelectorAll(".moving"));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((element) => {
-    if (element.isIntersecting) {
-      element.target.classList.add("active");
-    }
-  });
-});
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((element) => {
+      if (element.isIntersecting) {
+        element.target.classList.add("active");
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  }
+);
 sections.forEach((e) => {
   observer.observe(e);
 });
