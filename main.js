@@ -46,16 +46,13 @@ function showComments(num) {
 showComments(order);
 let sections = Array.from(document.querySelectorAll(".moving"));
 
-window.onscroll = () => {
-  sections.forEach((section) => {
-    const slideInAt =
-      window.scrollY + window.innerHeight - section.clientHeight / 2;
-    const sectionBottom = section.offsetTop + section.clientHeight;
-    const isHalfShown = slideInAt > section.offsetTop;
-    const isNoScrolledPast = window.scrollY < sectionBottom;
-    if (isHalfShown && isNoScrolledPast) {
-      section.classList.add("active");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((element) => {
+    if (element.isIntersecting) {
+      element.target.classList.add("active");
     }
   });
-};
-window.onscroll(console.log(window.screenY));
+});
+sections.forEach((e) => {
+  observer.observe(e);
+});
