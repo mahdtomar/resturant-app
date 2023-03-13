@@ -538,6 +538,7 @@ body section.comments .container .intro {
   text-transform: uppercase;
   font-size: 2em;
   font-weight: bold;
+  text-align: center;
 }
 
 body section.comments .container .slider {
