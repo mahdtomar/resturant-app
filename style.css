@@ -676,6 +676,12 @@ body footer .container div:nth-child(2) button {
   border: 5px solid var(--main);
   color: var(--main);
   font-size: 20px;
+  cursor: pointer;
+}
+
+body footer .container div:nth-child(2) button.hover {
+  color: #8d6921;
+  border-color: #8d6921;
 }
 
 body footer .container div:nth-child(2) span {

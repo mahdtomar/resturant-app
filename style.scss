@@ -511,6 +511,11 @@ body {
             border: 5px solid var(--main);
             color: var(--main);
             font-size: 20px;
+            cursor: pointer;
+            &.hover {
+              color: #8d6921;
+              border-color: #8d6921;
+            }
           }
           span {
             color: lightslategray;
