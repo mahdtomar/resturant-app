@@ -12,7 +12,6 @@ html {
   src: url("./fonts/Mansions\ Brush\ Script.ttf");
 }
 .fancy-font {
-  // font-family: "Brush-Script", cursive;
   color: var(--orange);
   font-family: "Great Vibes", cursive;
   text-transform: uppercase;
@@ -22,7 +21,7 @@ html {
 .moving {
   opacity: 0;
   transform: translateY(50px);
-  transition: 0.3s;
+  transition: 0.5s;
   &.active {
     opacity: 1;
     transform: translateY(0px);
